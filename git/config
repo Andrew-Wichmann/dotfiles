@@ -1,0 +1,54 @@
+[user]
+	name = Andrew Wichmann
+	email = andrewp.wichmann@gmail.com
+#	signingkey = andrewp.wichmann@gmail.com
+#[commit]
+# 	gpgsign = true
+[push]
+	default = current
+[pull]
+	rebase = true
+[rebase]
+	autostash = true
+[core]
+	autocrlf = input
+	editor = code --wait
+	excludesfile = /home/twisted/.gitignore_global
+[tag]
+	gpgsign = true
+	annotated = true
+[alias]
+	ci = commit
+	co = checkout
+	st = status
+
+	set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
+
+	# Pretty branch log
+	#lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+	#lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+	#lg = !"git lg2"
+
+	lg = lg1
+	lg1 = lg1-specific --all
+	lg2 = lg2-specific --all
+	lg3 = lg3-specific --all
+	lg1-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'
+	lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
+	lg3-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(auto)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'
+[filter "lfs"]
+
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+#[url "ssh://git@gitlab.com/"]
+#        insteadOf = https://gitlab.com/
+[filter "gitignore"]
+	clean = "sed '/#gitignore$/d'"
+	smudge = cat
+[init]
+	defaultBranch = master
+
+[url "git@github.com:"]
+	insteadOf = https://github.com
