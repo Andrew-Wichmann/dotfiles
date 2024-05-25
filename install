@@ -1,0 +1,8 @@
+#!/bin/bash
+IFS=',' read -ra FOLDER <<< "$STOW_FOLDERS"
+for folder in "${FOLDER[@]}";
+do
+    echo "stow $folder"
+    stow -D $folder
+    stow $folder
+done
