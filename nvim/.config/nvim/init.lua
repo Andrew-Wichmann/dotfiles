@@ -28,6 +28,7 @@ require("lazy").setup({
 	{ "nvim-treesitter/playground"},
 	{ "mbbill/undotree" },
 	{ "tpope/vim-fugitive" },
+    { "github/copilot.vim" },
 	{'VonHeikemen/lsp-zero.nvim', branch = 'v3.x', dependencies = {
 		{'neovim/nvim-lspconfig'},
 		{'hrsh7th/cmp-nvim-lsp'},
