@@ -216,4 +216,10 @@ bar {
     }
 }
 
+# Come back to this if ever not on a VM.
+# Might be able to juice this up to 4k
+output Virtual-1 {
+	mode 1920x1080@60.000Hz
+}
+
 include /etc/sway/config.d/*
