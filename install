@@ -6,3 +6,5 @@ do
     stow -D $folder
     stow $folder
 done
+
+grep -Fxg "source \$HOME/.config/bash/config" || echo "source \$HOME/.config/bash/config" >> ~/.bashrc
