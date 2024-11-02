@@ -1,0 +1,10 @@
+# source in ~/.bashrc like so:
+# source $HOME/.config/bash/config
+DIR="$( cd "$( dirname "$BASH_SOURCE[0]}" )" && pwd )"
+SCRIPT=$(basename "${BASH_SOURCE[0]}")
+
+for file in "$DIR"/*; do
+	if [ -f "$file" ] && [ "$(basename "$file")" != "$SCRIPT" ]  ; then
+		source "$file"
+	fi
+done
