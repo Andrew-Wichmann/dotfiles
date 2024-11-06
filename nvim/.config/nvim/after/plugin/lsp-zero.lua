@@ -17,44 +17,10 @@ require('mason').setup({})
 require('mason-lspconfig').setup({
     ensure_installed = {},
     handlers = {
-
         function(server_name)
             require('lspconfig')[server_name].setup({})
         end,
+    }
 
-        lua_ls = function()
-            require('lspconfig').lua_ls.setup {
-                capabilities = vim.tbl_deep_extend(
-                "force",
-                {},
-                vim.lsp.protocol.make_client_capabilities(),
-                require("cmp_nvim_lsp").default_capabilities()
-                ),
-                settings = {
-                    Lua = {
-                        runtime = { version = "Lua 5.1" },
-                        diagnostics = {
-                            globals = { "vim", "it", "describe", "before_each", "after_each" },
-                        }
-                    }
-                }
-            }
-        end,
-
-        pylsp = function()
-            require('lspconfig').pylsp.setup{
-                settings = {
-                    pylsp = {
-                        plugins = {
-                            pycodestyle = {
-                                ignore = {'E251'},
-                                maxLineLength = 120
-                            }
-                        }
-                    }
-                }
-            }
-        end,
-    },
 })
 
