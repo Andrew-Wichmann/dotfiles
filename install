@@ -1,10 +1,9 @@
 #!/bin/bash
 IFS=',' read -ra FOLDER <<< "$STOW_FOLDERS"
+rm $HOME/.bashrc
 for folder in "${FOLDER[@]}";
 do
     echo "stow $folder"
     stow -D $folder
     stow $folder
 done
-
-grep -Fxg "source \$HOME/.config/bash/config" || echo "source \$HOME/.config/bash/config" >> ~/.bashrc
