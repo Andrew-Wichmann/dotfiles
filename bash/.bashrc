@@ -115,5 +115,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+# To be honest. Not sure if this does anything.
+DISPLAY=0
 source $HOME/.config/bash/config
 . "$HOME/.cargo/env"

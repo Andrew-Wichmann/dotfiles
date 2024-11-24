@@ -18,7 +18,7 @@ set $term wezterm
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu wofi --show run | xargs swaymsg exec 
 
 include /etc/sway/config-vars.d/*
 
@@ -114,9 +114,13 @@ output * bg ~/.config/sway/wallpaper.jpg fill
 #
     # Switch to workspace
     bindsym $mod+1 workspace number 1
+    bindsym $mod+u workspace number 1
     bindsym $mod+2 workspace number 2
+    bindsym $mod+i workspace number 2
     bindsym $mod+3 workspace number 3
+    bindsym $mod+o workspace number 3
     bindsym $mod+4 workspace number 4
+    bindsym $mod+p workspace number 4
     bindsym $mod+5 workspace number 5
     bindsym $mod+6 workspace number 6
     bindsym $mod+7 workspace number 7
@@ -210,6 +214,11 @@ for_window [class="^.*"] client.focused          #77dd77 #285577 #ffffff #2e9ef4
 # Might be able to juice this up to 4k
 output Virtual-1 {
 	mode 1920x1080@60.000Hz
+}
+
+input "1267:12572:DELL097D:00_04F3:311C_Touchpad" {
+    natural_scroll true
+    scroll_factor 0.2
 }
 
 # BEGIN Catppuccin for i3
