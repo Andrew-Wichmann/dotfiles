@@ -10,6 +10,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 		lazypath,
 	})
 end
+
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	{
@@ -37,5 +38,6 @@ require("lazy").setup({
 		{'williamboman/mason.nvim'},
 		{'williamboman/mason-lspconfig.nvim'},
 	}},
+    { 'mhartington/formatter.nvim' },
 })
 
