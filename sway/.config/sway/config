@@ -18,7 +18,7 @@ set $term wezterm
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu wofi --show run | xargs swaymsg exec 
+set $menu wofi --show run | xargs swaymsg exec
 
 include /etc/sway/config-vars.d/*
 
@@ -85,7 +85,7 @@ output * bg ~/.config/sway/wallpaper.jpg fill
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
-    bindsym $mod+q exec swaylock -i ~/.config/sway/wallpaper.jpg
+    bindsym $mod+Shift+l exec swaylock -i ~/.config/sway/wallpaper.jpg
 
 #
 # Moving around:
@@ -102,10 +102,11 @@ output * bg ~/.config/sway/wallpaper.jpg fill
     bindsym $mod+Right focus right
 
     # Move the focused window with the same, but add Shift
-    bindsym $mod+Shift+$left move left
-    bindsym $mod+Shift+$down move down
-    bindsym $mod+Shift+$up move up
-    bindsym $mod+Shift+$right move right
+    # Deactivated in favor of $mod+Shift+l for locking desktop
+    #bindsym $mod+Shift+$left move left
+    #bindsym $mod+Shift+$down move down
+    #bindsym $mod+Shift+$up move up
+    #bindsym $mod+Shift+$right move right
     # Ditto, with arrow keys
     bindsym $mod+Shift+Left move left
     bindsym $mod+Shift+Down move down
