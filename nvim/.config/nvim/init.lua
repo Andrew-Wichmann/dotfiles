@@ -26,7 +26,6 @@ require("lazy").setup({
 		branch = "harpoon2",
 		dependencies = { "nvim-lua/plenary.nvim" }
 	},
-	{ "nvim-treesitter/playground"},
 	{ "mbbill/undotree" },
 	{ "tpope/vim-fugitive" },
     { "github/copilot.vim" },
@@ -39,5 +38,5 @@ require("lazy").setup({
 		{'williamboman/mason-lspconfig.nvim'},
 	}},
     { 'mhartington/formatter.nvim' },
+    { "lewis6991/gitsigns.nvim" },
 })
-
