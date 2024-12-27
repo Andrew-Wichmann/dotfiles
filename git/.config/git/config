@@ -12,7 +12,7 @@
 	autostash = true
 [core]
 	autocrlf = input
-	editor = code --wait
+	editor = vim
 	excludesfile = /home/twisted/.gitignore_global
 [tag]
 	gpgsign = true

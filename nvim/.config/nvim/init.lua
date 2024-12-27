@@ -17,7 +17,7 @@ require("lazy").setup({
 		'nvim-telescope/telescope.nvim', tag = '0.1.6',
 		dependencies = { 'nvim-lua/plenary.nvim', {'BurntSushi/ripgrep', build = {"cargo build --release && cp target/release/rg $HOME/.local/bin"}} }
 	},
-	{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+	{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' },
 	{ 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 	{ "nvim-treesitter/playground"},
@@ -28,6 +28,16 @@ require("lazy").setup({
 	},
 	{ "mbbill/undotree" },
 	{ "tpope/vim-fugitive" },
+    {
+        "CopilotC-Nvim/CopilotChat.nvim",
+        dependencies = {
+          { "github/copilot.vim" }, -- or zbirenbaum/copilot.lua
+          { "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
+        },
+        build = "make tiktoken", -- Only on MacOS or Linux
+        opts = {
+        },
+      },
     { "github/copilot.vim" },
 	{'VonHeikemen/lsp-zero.nvim', branch = 'v3.x', dependencies = {
 		{'neovim/nvim-lspconfig'},

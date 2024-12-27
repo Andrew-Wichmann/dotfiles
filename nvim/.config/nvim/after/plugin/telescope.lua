@@ -6,7 +6,3 @@ vim.keymap.set('n', '<leader>ps', function()
 	builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
 telescope.load_extension('fzf')
-return {
-    'nvim-telescope/telescope.nvim', tag = '0.1.6',
-      dependencies = { 'nvim-lua/plenary.nvim', 'BurntSushi/ripgrep' }
-}
