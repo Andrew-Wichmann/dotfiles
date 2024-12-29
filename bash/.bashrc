@@ -119,3 +119,6 @@ fi
 DISPLAY=0
 source $HOME/.config/bash/config
 . "$HOME/.cargo/env"
+
+# TODO: move to bash_aliases
+alias rasppi="ssh -p 32216 raspberrypi-master.andrewwichmann.com"
