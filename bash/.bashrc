@@ -123,3 +123,4 @@ source $HOME/.config/bash/config
 # TODO: move to bash_aliases
 alias rasppi="ssh -p 32216 raspberrypi-master.andrewwichmann.com"
 alias portfolio="ssh -p 32219 password123@portfolio.andrewwichmann.com"
+alias glg="git log --oneline --graph --all --decorate"
