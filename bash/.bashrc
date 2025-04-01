@@ -124,3 +124,7 @@ source $HOME/.config/bash/config
 alias rasppi="ssh -p 32216 raspberrypi-master.andrewwichmann.com"
 alias portfolio="ssh -p 32219 password123@portfolio.andrewwichmann.com"
 alias glg="git log --oneline --graph --all --decorate"
+
+if [ -z $WAYLAND_DISPLAY ] && [ "$(tty)" == "/dev/tty1" ] ; then
+    exec sway
+fi
