@@ -11,12 +11,15 @@ vim.keymap.set("n", "<leader>cpo",
       require("CopilotChat").open()
     end, {}
 )
-package.loaded["CopilotChat"] = nil
+vim.keymap.set("n", "<leader>cpd", ":Copilot disable<CR>")
+vim.keymap.set("n", "<leader>cpe", ":Copilot enable<CR>")
 require("CopilotChat").setup({
     mappings = {
     close = {
           normal = 'q',
           insert = '',
         },
-    }
+    },
+    model= 'o1'
 })
+vim.cmd("Copilot disable")
