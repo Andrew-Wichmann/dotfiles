@@ -20,6 +20,6 @@ require("CopilotChat").setup({
           insert = '',
         },
     },
-    model= 'o1'
+    model= 'gpt-4'
 })
 vim.cmd("Copilot disable")
