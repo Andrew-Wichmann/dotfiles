@@ -88,6 +88,16 @@ output * bg ~/.config/sway/wallpaper.jpg fill
     bindsym $mod+Shift+l exec swaylock -i ~/.config/sway/wallpaper.jpg
 
 #
+# Special keyboard keys
+#
+    bindsym XF86MonBrightnessUp exec sudo brightnessctl set +10%
+    bindsym XF86MonBrightnessDown exec sudo brightnessctl set 10%-
+    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+    bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+
+#
 # Moving around:
 #
     # Move your focus around
