@@ -210,6 +210,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 exec swaymsg border none
+for_window [class=".*"] border none
 
 # Come back to this if ever not on a VM.
 # Might be able to juice this up to 4k
