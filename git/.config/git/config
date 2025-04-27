@@ -15,7 +15,7 @@
 	editor = vim
 	excludesfile = /home/twisted/.gitignore_global
 [tag]
-	gpgsign = true
+    #gpgsign = true
 	annotated = true
 [alias]
 	ci = commit
