@@ -44,6 +44,7 @@
             "critical": 15
         },
         "full-at": 60,
+        "tooltip-format": "{timeTo} ({capacity})",
         "format": "{icon}",
         "format-charging": "",
         "format-plugged": "",
