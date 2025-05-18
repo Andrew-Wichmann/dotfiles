@@ -230,4 +230,6 @@ bar {
   swaybar_command waybar
 }
 
+exec $term
+
 include /etc/sway/config.d/*
